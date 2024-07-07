@@ -9,6 +9,7 @@ export interface SettingData {
   isFolder: boolean,
   isCover: boolean,
   downloadingMaxSize: number
+  intervalTime: number
 }
 
 export interface SettingDataEasy {
@@ -20,7 +21,8 @@ export interface SettingDataEasy {
   isSubtitle?: boolean,
   isDanmaku?: boolean,
   isFolder?: boolean,
-  downloadingMaxSize?: number
+  downloadingMaxSize?: number,
+  intervalTime: number
 }
 
 export enum LoginStatus {

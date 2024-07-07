@@ -51,10 +51,11 @@
 **提前自备梯子，因为electron electron-builder等依赖项需要从GitHub下载**
 
 ```bash
-git clone https://github.com/blogwy/BilibiliVideoDownload.git
+git clone https://github.com/iioSnail/BilibiliVideoDownload.git
 
 cd BilibiliVideoDownload
 
+# NodeJs版本需要>=16
 yarn
 
 yarn electron:serve

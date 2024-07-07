@@ -22,6 +22,15 @@ function handleDeleteFile (setting: SettingData, videoInfo: TaskData) {
 }
 
 export default async (videoInfo: TaskData, event: IpcMainEvent, setting: SettingData) => {
+  // console.log("start");
+  // console.log("start:" + new Date());
+  // event.reply('download-video-status', {
+  //   id: videoInfo.id,
+  //   status: 6,  // 不生效
+  //   progress: 0
+  // });
+  await sleep(setting.intervalTime * 1000);
+  // console.log("end:" + new Date());
   // throttle start
   let videoLastTime = 0
   let videoTimer: any = null

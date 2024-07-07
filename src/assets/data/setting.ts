@@ -53,6 +53,12 @@ const formConfig = [
     type: 'switch',
     name: 'isCover',
     tips: '开启后会下载视频封面'
+  },
+  {
+    label: '间隔时长（秒）',
+    type: 'number',
+    name: 'intervalTime',
+    tips: '下载一个视频后间隔多久下载另一个视频，防止B站限流导致下载失败'
   }
 ]
 
@@ -64,7 +70,8 @@ const settingData = {
   isDanmaku: true,
   isFolder: true,
   isCover: true,
-  downloadingMaxSize: 5
+  downloadingMaxSize: 5,
+  intervalTime: 20
 }
 
 const settingRules = {
@@ -106,6 +113,11 @@ const settingRules = {
     }
   ],
   isCover: [
+    {
+      required: false
+    }
+  ],
+  intervalTime: [
     {
       required: false
     }

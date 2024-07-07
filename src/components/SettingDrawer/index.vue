@@ -51,6 +51,7 @@
         </a-input>
         <a-slider v-if="item.type === 'slider'" :max="5" :min="1" v-model:value="modelRef[item.name]" />
         <a-switch v-if="item.type === 'switch'" v-model:checked="modelRef[item.name]" />
+        <a-input v-if="item.type === 'number'" v-model:value="modelRef[item.name]" type="number"/>
       </a-form-item>
     </a-form>
   </a-drawer>
@@ -67,7 +68,7 @@ import { storeToRefs } from 'pinia'
 import LoginModal from '../LoginModal/index.vue'
 
 const { loginStatus } = storeToRefs(store.baseStore())
-const { downloadPath, isDanmaku, isDelete, isFolder, isMerge, isSubtitle, downloadingMaxSize } = storeToRefs(store.settingStore())
+const { downloadPath, isDanmaku, isDelete, isFolder, isMerge, isSubtitle, downloadingMaxSize, intervalTime } = storeToRefs(store.settingStore())
 
 const loginModal = ref<any>(null)
 const visible = ref<boolean>(false)
@@ -84,6 +85,7 @@ const open = () => {
   modelRef.isDanmaku = isDanmaku.value
   modelRef.isFolder = isFolder.value
   modelRef.downloadingMaxSize = downloadingMaxSize.value
+  modelRef.intervalTime = intervalTime.value
   toogleVisible()
 }
 

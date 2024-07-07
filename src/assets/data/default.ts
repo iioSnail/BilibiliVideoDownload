@@ -38,7 +38,8 @@ export const settingData: SettingData = {
   isDanmaku: true,
   isFolder: true,
   isCover: true,
-  downloadingMaxSize: 5
+  downloadingMaxSize: 5,
+  intervalTime: 20
 }
 
 export const taskData: TaskData = {

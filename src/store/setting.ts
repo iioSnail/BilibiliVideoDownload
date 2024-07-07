@@ -14,7 +14,8 @@ export const settingStore = defineStore('setting', {
       isDanmaku: true,
       isFolder: true,
       isCover: true,
-      downloadingMaxSize: 5
+      downloadingMaxSize: 5,
+      intervalTime: 20
     }
     return setting
   },
@@ -29,7 +30,8 @@ export const settingStore = defineStore('setting', {
       isDanmaku: state.isDanmaku,
       isFolder: state.isFolder,
       isCover: state.isCover,
-      downloadingMaxSize: state.downloadingMaxSize
+      downloadingMaxSize: state.downloadingMaxSize,
+      intervalTime: state.intervalTime
     })
   },
   actions: {
@@ -72,6 +74,10 @@ export const settingStore = defineStore('setting', {
     setDownloadingMaxSize (size: number) {
       this.downloadingMaxSize = size
       window.electron.setStore('setting.downloadingMaxSize', size)
+    },
+    setIntervalTime (time: number) {
+      this.intervalTime = time
+      window.electron.setStore('setting.intervalTime', time)
     },
     setSetting (setting: SettingDataEasy) {
       const allSetting = this.getSetting
